@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS Fundamentals Demo | Full Stack Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>🚀 Full Stack Journey</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#basics">HTML Basics</a></li>
+                <li><a href="#css">CSS Styling</a></li>
+                <li><a href="#layout">Layout</a></li>
+                <li><a href="#interactive">Interactive</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">HTML & CSS Fundamentals</h1>
+                <p class="hero-subtitle">Master the building blocks of web development</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Start Learning</button>
+                    <button class="btn btn-secondary">View Code</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- HTML Basics Section -->
+        <section id="basics" class="section">
+            <div class="container">
+                <h2 class="section-title">📝 HTML Structure Basics</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>Semantic HTML</h3>
+                        <p>Using meaningful HTML elements for better structure and accessibility.</p>
+                        <code>&lt;header&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;</code>
+                    </div>
+                    <div class="card">
+                        <h3>Forms & Input</h3>
+                        <form class="demo-form">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                            <textarea placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn-small">Submit</button>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <h3>Lists & Tables</h3>
+                        <ul class="styled-list">
+                            <li>Unordered list item</li>
+                            <li>Another item</li>
+                            <li>Third item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CSS Styling Section -->
+        <section id="css" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">🎨 CSS Styling Concepts</h2>
+                <div class="styling-demo">
+                    <div class="box box-1">
+                        <h4>Box Model</h4>
+                        <p>Margin, Border, Padding, Content</p>
+                    </div>
+                    <div class="box box-2">
+                        <h4>Typography</h4>
+                        <p>Font families, sizes, weights</p>
+                    </div>
+                    <div class="box box-3">
+                        <h4>Colors</h4>
+                        <p>HEX, RGB, HSL values</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layout Section -->
+        <section id="layout" class="section">
+            <div class="container">
+                <h2 class="section-title">📐 Layout Techniques</h2>
+                <div class="layout-examples">
+                    <div class="layout-demo flexbox-demo">
+                        <h3>Flexbox Layout</h3>
+                        <div class="flex-container">
+                            <div class="flex-item">Item 1</div>
+                            <div class="flex-item">Item 2</div>
+                            <div class="flex-item">Item 3</div>
+                        </div>
+                    </div>
+                    <div class="layout-demo grid-demo">
+                        <h3>CSS Grid Layout</h3>
+                        <div class="grid-container">
+                            <div class="grid-item">Header</div>
+                            <div class="grid-item">Sidebar</div>
+                            <div class="grid-item">Main</div>
+                            <div class="grid-item">Footer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Section -->
+        <section id="interactive" class="section bg-dark">
+            <div class="container">
+                <h2 class="section-title text-white">⚡ Interactive Elements</h2>
+                <div class="interactive-demo">
+                    <div class="hover-card">
+                        <h3>Hover Effects</h3>
+                        <p>Hover over me to see the effect!</p>
+                    </div>
+                    <div class="animation-demo">
+                        <div class="rotating-element">🚀</div>
+                        <p>CSS Animation</p>
+                    </div>
+                    <div class="transition-demo">
+                        <button class="transition-btn">Click Me!</button>
+                        <p>CSS Transitions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Full Stack Learning Journey. Built with ❤️ for AI Engineers.</p>
+            <div class="footer-links">
+                <a href="../README.md">Documentation</a>
+                <a href="#top">Back to Top</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

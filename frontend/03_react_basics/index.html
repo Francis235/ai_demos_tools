@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Basics | Full Stack Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <!-- Babel for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>⚛️ React Basics</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#components">Components</a></li>
+                <li><a href="#jsx">JSX</a></li>
+                <li><a href="#props">Props</a></li>
+                <li><a href="#state">State</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#hooks">Hooks</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">React Fundamentals</h1>
+                <p class="hero-subtitle">Learn component-based UI development with React</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" id="startDemo">Start React Demo</button>
+                    <button class="btn btn-secondary" id="resetDemo">Reset All</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- React Demo Container -->
+        <section class="demo-section">
+            <div class="container">
+                <div class="demo-header">
+                    <h3>🎯 Live React Demonstrations</h3>
+                    <div class="demo-controls">
+                        <button class="btn btn-small" id="showCode">Show Code</button>
+                        <button class="btn btn-small" id="hideCode">Hide Code</button>
+                    </div>
+                </div>
+                <div id="react-demo-root"></div>
+            </div>
+        </section>
+
+        <!-- Interactive Playground -->
+        <section class="playground-section">
+            <div class="container">
+                <h2 class="section-title">🎮 React Playground</h2>
+                <div class="playground">
+                    <div class="playground-header">
+                        <h3>Try Your Own React Components!</h3>
+                        <button class="btn btn-small" id="runReactCode">Run React Code</button>
+                    </div>
+                    <textarea id="reactCodeEditor" placeholder="// Write your React component here...
+function MyComponent() {
+  const [message, setMessage] = React.useState('Hello, React!');
+  
+  return (
+    <div>
+      <h2>{message}</h2>
+      <button onClick={() => setMessage('You clicked me!')}>
+        Click me!
+      </button>
+    </div>
+  );
+}
+
+// Don't forget to return your component
+return <MyComponent />;"></textarea>
+                    <div class="playground-output">
+                        <div id="reactPlaygroundOutput"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Full Stack Learning Journey. Building with React!</p>
+            <div class="footer-links">
+                <a href="../02_javascript_es6_plus/">← Previous: JavaScript ES6+</a>
+                <a href="../04_state_management/">Next: State Management →</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/babel" src="script.js"></script>
+</body>
+</html>

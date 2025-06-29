@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Management | Full Stack Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Redux CDN -->
+    <script src="https://unpkg.com/redux@4.2.1/dist/redux.min.js"></script>
+    <script src="https://unpkg.com/react-redux@8.1.2/dist/react-redux.min.js"></script>
+    
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <!-- Babel for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>🔄 State Management</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#redux">Redux</a></li>
+                <li><a href="#context">Context API</a></li>
+                <li><a href="#patterns">Patterns</a></li>
+                <li><a href="#playground">Playground</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">State Management Mastery</h1>
+                <p class="hero-subtitle">Redux, Context API, and Global State Patterns</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" id="startDemo">Start Demos</button>
+                    <button class="btn btn-secondary" id="resetDemo">Reset All</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Container -->
+        <section class="demo-section">
+            <div class="container">
+                <div class="demo-header">
+                    <h3>🎯 Live State Management Demonstrations</h3>
+                </div>
+                <div id="state-demo-root"></div>
+            </div>
+        </section>
+
+        <!-- Interactive Playground -->
+        <section id="playground" class="playground-section">
+            <div class="container">
+                <h2 class="section-title">🎮 State Management Playground</h2>
+                <div class="playground">
+                    <div class="playground-header">
+                        <h3>Try Redux and Context API!</h3>
+                        <button class="btn btn-small" id="runStateCode">Run Code</button>
+                    </div>
+                    <textarea id="stateCodeEditor" placeholder="// Redux Example
+const counterReducer = (state = { count: 0 }, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { count: state.count + 1 };
+    case 'DECREMENT':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(counterReducer);
+
+function Counter() {
+  const [state, setState] = React.useState(store.getState());
+  
+  React.useEffect(() => {
+    const unsubscribe = store.subscribe(() => {
+      setState(store.getState());
+    });
+    return unsubscribe;
+  }, []);
+  
+  return (
+    <div style={{ padding: '2rem', textAlign: 'center' }}>
+      <h2>Count: {state.count}</h2>
+      <button onClick={() => store.dispatch({ type: 'INCREMENT' })}>+</button>
+      <button onClick={() => store.dispatch({ type: 'DECREMENT' })}>-</button>
+    </div>
+  );
+}
+
+return <Counter />;"></textarea>
+                    <div class="playground-output">
+                        <div id="statePlaygroundOutput"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Full Stack Learning Journey. Mastering State Management!</p>
+            <div class="footer-links">
+                <a href="../03_react_basics/">← Previous: React Basics</a>
+                <a href="../05_css_frameworks/">Next: CSS Frameworks →</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/babel" src="script.js"></script>
+</body>
+</html> 

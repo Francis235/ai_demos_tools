@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript ES6+ Fundamentals | Full Stack Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>⚡ JavaScript ES6+</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#variables">Variables</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#arrays">Arrays</a></li>
+                <li><a href="#objects">Objects</a></li>
+                <li><a href="#async">Async</a></li>
+                <li><a href="#modules">Modules</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">JavaScript ES6+ Fundamentals</h1>
+                <p class="hero-subtitle">Modern JavaScript features and best practices</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" id="runAllDemos">Run All Demos</button>
+                    <button class="btn btn-secondary" id="clearConsole">Clear Console</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Console Output Section -->
+        <section class="console-section">
+            <div class="container">
+                <div class="console-header">
+                    <h3>📟 Live Console Output</h3>
+                    <button class="btn btn-small" id="toggleConsole">Toggle</button>
+                </div>
+                <div class="console-output" id="consoleOutput">
+                    <div class="console-line">// JavaScript ES6+ Demo Console</div>
+                    <div class="console-line">// Click buttons to see modern JavaScript in action!</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Variables & Declarations Section -->
+        <section id="variables" class="section">
+            <div class="container">
+                <h2 class="section-title">🔤 Variables & Declarations</h2>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3>let vs const vs var</h3>
+                        <p>Learn the differences between modern variable declarations</p>
+                        <button class="btn btn-demo" data-demo="variables">Demo Variables</button>
+                        <div class="code-snippet">
+                            <pre><code>// const for constants
+const PI = 3.14159;
+
+// let for variables
+let userName = 'Alice';
+
+// var is old school
+var age = 25; // avoid this!</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Template Literals</h3>
+                        <p>String interpolation and multiline strings</p>
+                        <button class="btn btn-demo" data-demo="templates">Demo Templates</button>
+                        <div class="code-snippet">
+                            <pre><code>const name = 'World';
+const greeting = `Hello, ${name}!
+Welcome to JavaScript ES6+`;
+
+console.log(greeting);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Destructuring</h3>
+                        <p>Extract values from arrays and objects</p>
+                        <button class="btn btn-demo" data-demo="destructuring">Demo Destructuring</button>
+                        <div class="code-snippet">
+                            <pre><code>const [a, b] = [1, 2];
+const {name, age} = user;
+
+// With default values
+const [x = 10] = [];</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Functions Section -->
+        <section id="functions" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">⚡ Modern Functions</h2>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3>Arrow Functions</h3>
+                        <p>Concise function syntax and lexical this</p>
+                        <button class="btn btn-demo" data-demo="arrows">Demo Arrows</button>
+                        <div class="code-snippet">
+                            <pre><code>// Traditional function
+function add(a, b) {
+  return a + b;
+}
+
+// Arrow function
+const add = (a, b) => a + b;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Default Parameters</h3>
+                        <p>Set default values for function parameters</p>
+                        <button class="btn btn-demo" data-demo="defaults">Demo Defaults</button>
+                        <div class="code-snippet">
+                            <pre><code>function greet(name = 'Friend') {
+  return `Hello, ${name}!`;
+}
+
+const multiply = (a, b = 1) => a * b;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Rest & Spread</h3>
+                        <p>Handle variable number of arguments</p>
+                        <button class="btn btn-demo" data-demo="restSpread">Demo Rest/Spread</button>
+                        <div class="code-snippet">
+                            <pre><code>// Rest parameters
+const sum = (...numbers) => 
+  numbers.reduce((a, b) => a + b, 0);
+
+// Spread operator
+const arr = [1, 2, 3];
+const newArr = [...arr, 4, 5];</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Arrays Section -->
+        <section id="arrays" class="section">
+            <div class="container">
+                <h2 class="section-title">📊 Array Methods</h2>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3>Map, Filter, Reduce</h3>
+                        <p>Functional programming with arrays</p>
+                        <button class="btn btn-demo" data-demo="arrayMethods">Demo Array Methods</button>
+                        <div class="code-snippet">
+                            <pre><code>const numbers = [1, 2, 3, 4, 5];
+
+const doubled = numbers.map(x => x * 2);
+const evens = numbers.filter(x => x % 2 === 0);
+const sum = numbers.reduce((a, b) => a + b);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Find & Some/Every</h3>
+                        <p>Search and validate array elements</p>
+                        <button class="btn btn-demo" data-demo="arraySearch">Demo Array Search</button>
+                        <div class="code-snippet">
+                            <pre><code>const users = [{name: 'Alice', age: 25}];
+
+const user = users.find(u => u.name === 'Alice');
+const hasAdults = users.some(u => u.age >= 18);
+const allAdults = users.every(u => u.age >= 18);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Array Destructuring</h3>
+                        <p>Extract array elements efficiently</p>
+                        <button class="btn btn-demo" data-demo="arrayDestruct">Demo Array Destructuring</button>
+                        <div class="code-snippet">
+                            <pre><code>const colors = ['red', 'green', 'blue'];
+const [first, second, ...rest] = colors;
+
+// Swapping variables
+let a = 1, b = 2;
+[a, b] = [b, a];</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objects Section -->
+        <section id="objects" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">🔧 Object Features</h2>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3>Object Destructuring</h3>
+                        <p>Extract object properties elegantly</p>
+                        <button class="btn btn-demo" data-demo="objectDestruct">Demo Object Destructuring</button>
+                        <div class="code-snippet">
+                            <pre><code>const person = {name: 'Alice', age: 30, city: 'NYC'};
+
+const {name, age} = person;
+const {name: fullName} = person; // renaming
+const {country = 'USA'} = person; // default</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Object Methods</h3>
+                        <p>Object.keys, values, entries and more</p>
+                        <button class="btn btn-demo" data-demo="objectMethods">Demo Object Methods</button>
+                        <div class="code-snippet">
+                            <pre><code>const obj = {a: 1, b: 2, c: 3};
+
+const keys = Object.keys(obj);
+const values = Object.values(obj);
+const entries = Object.entries(obj);
+const merged = Object.assign({}, obj, {d: 4});</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Enhanced Object Literals</h3>
+                        <p>Shorthand properties and computed keys</p>
+                        <button class="btn btn-demo" data-demo="objectLiterals">Demo Object Literals</button>
+                        <div class="code-snippet">
+                            <pre><code>const name = 'Alice';
+const age = 30;
+
+// Shorthand properties
+const person = {name, age};
+
+// Computed property names
+const key = 'dynamic';
+const obj = {[key]: 'value'};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Async Programming Section -->
+        <section id="async" class="section">
+            <div class="container">
+                <h2 class="section-title">⏱️ Async Programming</h2>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3>Promises</h3>
+                        <p>Handle asynchronous operations elegantly</p>
+                        <button class="btn btn-demo" data-demo="promises">Demo Promises</button>
+                        <div class="code-snippet">
+                            <pre><code>const fetchData = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Data loaded!'), 1000);
+  });
+};
+
+fetchData().then(data => console.log(data));</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Async/Await</h3>
+                        <p>Write asynchronous code that looks synchronous</p>
+                        <button class="btn btn-demo" data-demo="asyncAwait">Demo Async/Await</button>
+                        <div class="code-snippet">
+                            <pre><code>async function loadData() {
+  try {
+    const data = await fetchData();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Fetch API</h3>
+                        <p>Modern way to make HTTP requests</p>
+                        <button class="btn btn-demo" data-demo="fetchAPI">Demo Fetch API</button>
+                        <div class="code-snippet">
+                            <pre><code>// GET request
+const response = await fetch('/api/users');
+const users = await response.json();
+
+// POST request  
+await fetch('/api/users', {
+  method: 'POST',
+  body: JSON.stringify(user)
+});</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modules Section -->
+        <section id="modules" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">📦 ES6 Modules</h2>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3>Import/Export</h3>
+                        <p>Modular JavaScript with imports and exports</p>
+                        <button class="btn btn-demo" data-demo="modules">Demo Modules</button>
+                        <div class="code-snippet">
+                            <pre><code>// math.js
+export const add = (a, b) => a + b;
+export default function multiply(a, b) {
+  return a * b;
+}
+
+// main.js
+import multiply, {add} from './math.js';</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Dynamic Imports</h3>
+                        <p>Load modules on demand</p>
+                        <button class="btn btn-demo" data-demo="dynamicImports">Demo Dynamic Imports</button>
+                        <div class="code-snippet">
+                            <pre><code>// Lazy loading modules
+async function loadModule() {
+  const module = await import('./utils.js');
+  module.doSomething();
+}
+
+// Conditional imports
+if (condition) {
+  const {feature} = await import('./feature.js');
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Classes</h3>
+                        <p>Object-oriented programming in JavaScript</p>
+                        <button class="btn btn-demo" data-demo="classes">Demo Classes</button>
+                        <div class="code-snippet">
+                            <pre><code>class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  
+  speak() {
+    console.log(`${this.name} makes a sound`);
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks`);
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Playground -->
+        <section class="playground-section">
+            <div class="container">
+                <h2 class="section-title">🎮 JavaScript Playground</h2>
+                <div class="playground">
+                    <div class="playground-header">
+                        <h3>Try Your Own JavaScript ES6+ Code!</h3>
+                        <button class="btn btn-small" id="runCode">Run Code</button>
+                    </div>
+                    <textarea id="codeEditor" placeholder="// Write your JavaScript ES6+ code here...
+const greeting = name => `Hello, ${name}!`;
+console.log(greeting('World'));
+
+// Try some ES6+ features:
+// - Arrow functions
+// - Template literals  
+// - Destructuring
+// - Async/await
+// - Array methods (map, filter, reduce)
+"></textarea>
+                    <div class="playground-output" id="playgroundOutput"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Full Stack Learning Journey. Mastering Modern JavaScript.</p>
+            <div class="footer-links">
+                <a href="../01_html_css_fundamentals/">← Previous: HTML/CSS</a>
+                <a href="../03_react_basics/">Next: React Basics →</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
